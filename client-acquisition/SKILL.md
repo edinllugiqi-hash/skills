@@ -65,6 +65,7 @@ Plus up to 20 points for many Google reviews (established businesses that can pa
 
 ## Customizing
 
+- **Design (HTML emails):** emails are sent as a styled HTML version with a plain-text fallback. Match your own website with the `brand` block in `acquisition.json`: `color` (button and links), `header_color`, `background`, `font` and `logo_url` (a publicly reachable PNG, ideally white on the header color; without it the company name is shown). The layouts are `references/templates/initial_email.html` and `followup_email.html` (point `templates.initial_email_html` / `templates.followup_email_html` at your own files). They also accept `{issue_items}` (the issues as `<li>` items), `{logo}`, `{color}`, `{header_color}`, `{background}` and `{font}`. Set `"html": false` to send plain text only.
 - **Email text:** edit `references/templates/initial_email.txt` and `followup_email.txt`, or point `templates.initial_email` / `templates.followup_email` in `acquisition.json` at your own files. First line is the subject, then `---`, then the body. Placeholders: `{name}`, `{issue_bullets}`, `{reputation_line}`, `{offer}`, `{booking_link}`, `{sender_name}`, `{sender_company}`, `{sender_phone}`, `{sender_website}`, plus any `leads.csv` column.
 - **Target niches:** businesses that depend on local search convert best (Handwerker, Friseure, Physiotherapie, Restaurants, Ärzte, Kosmetik).
 

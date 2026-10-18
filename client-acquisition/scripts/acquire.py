@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import html
 import json
 import os
 import re
@@ -280,19 +281,18 @@ def cmd_audit(args, cfg, leads, leads_path) -> None:
 
 # --------------------------------------------------------------------------- outreach
 
-def render(template: str, lead: dict, cfg: dict) -> str:
+def render(template: str, lead: dict, cfg: dict, as_html: bool = False) -> str:
     sender = cfg.get("sender", {})
+    brand = cfg.get("brand", {})
     issue_keys = [i for i in lead["issues"].split(";") if i]
-    bullets = "\n".join("• " + ISSUE_TEXT[i].format(**lead) for i in issue_keys[:3])
+    issues = [ISSUE_TEXT[i].format(**lead) for i in issue_keys[:3]]
     reviews = int(float(lead["reviews"] or 0))
     reputation = (
         f"Mit {reviews} Google-Bewertungen haben Sie sich offensichtlich schon einen guten Ruf aufgebaut. "
-        "Eine moderne Website sorgt dafür, dass daraus auch online neue Kunden werden.\n\n"
+        "Eine moderne Website sorgt dafür, dass daraus auch online neue Kunden werden."
     ) if reviews >= 10 else ""
     values = {
         **lead,
-        "issue_bullets": bullets,
-        "reputation_line": reputation,
         "sender_name": sender.get("name", ""),
         "sender_company": sender.get("company", ""),
         "sender_phone": sender.get("phone", ""),
@@ -300,7 +300,24 @@ def render(template: str, lead: dict, cfg: dict) -> str:
         "offer": cfg.get("offer", ""),
         "booking_link": cfg.get("booking_link", ""),
     }
-    return template.format_map(DefaultDict(values)).strip() + "\n"
+    if not as_html:
+        values["issue_bullets"] = "\n".join("• " + i for i in issues)
+        values["reputation_line"] = reputation + "\n\n" if reputation else ""
+        return template.format_map(DefaultDict(values)).strip() + "\n"
+
+    values = {k: html.escape(str(v)) for k, v in values.items()}
+    values["issue_items"] = "".join(f'<li style="margin:0 0 8px">{html.escape(i)}</li>' for i in issues)
+    values["reputation_line"] = f'<p style="margin:0 0 16px">{html.escape(reputation)}</p>' if reputation else ""
+    values["logo"] = (
+        f'<img src="{html.escape(brand["logo_url"])}" alt="{values["sender_company"]}" height="40" style="display:block;border:0;height:40px">'
+        if brand.get("logo_url") else
+        f'<span style="font-size:20px;font-weight:bold;color:#ffffff">{values["sender_company"]}</span>'
+    )
+    values["color"] = html.escape(brand.get("color", "#2563eb"))
+    values["header_color"] = html.escape(brand.get("header_color", brand.get("color", "#2563eb")))
+    values["background"] = html.escape(brand.get("background", "#f4f5f7"))
+    values["font"] = html.escape(brand.get("font", "Arial, Helvetica, sans-serif"))
+    return template.format_map(DefaultDict(values))
 
 
 class DefaultDict(dict):
@@ -319,6 +336,15 @@ def read_template(cfg: dict, name: str) -> tuple[str, str]:
     return subject.removeprefix("Subject:").strip(), body
 
 
+def read_html_template(cfg: dict, name: str) -> str | None:
+    """HTML version of a template; the plain-text one is always sent alongside it."""
+    if cfg.get("html") is False:
+        return None
+    custom = cfg.get("templates", {}).get(name + "_html")
+    path = Path(custom) if custom else templates_dir() / f"{name}.html"
+    return path.read_text(encoding="utf-8") if path.exists() else None
+
+
 def build_message(lead: dict, cfg: dict, template: str) -> EmailMessage:
     subject_t, body_t = read_template(cfg, template)
     sender = cfg.get("sender", {})
@@ -332,6 +358,9 @@ def build_message(lead: dict, cfg: dict, template: str) -> EmailMessage:
     msg["Message-ID"] = make_msgid(domain=from_email.split("@")[1])
     msg["List-Unsubscribe"] = f"<mailto:{from_email}?subject=Abmelden>"
     msg.set_content(render(body_t, lead, cfg))
+    html_t = read_html_template(cfg, template)
+    if html_t:
+        msg.add_alternative(render(html_t, lead, cfg, as_html=True), subtype="html")
     return msg
 
 

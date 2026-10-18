@@ -11,5 +11,13 @@
     "phone": "+49 89 1234567",
     "website": "https://muster-webdesign.de"
   },
+  "brand": {
+    "color": "#2563eb",
+    "header_color": "#111827",
+    "background": "#f4f5f7",
+    "font": "Arial, Helvetica, sans-serif",
+    "logo_url": "https://muster-webdesign.de/logo-weiss.png"
+  },
+  "html": true,
   "templates": {}
 }
