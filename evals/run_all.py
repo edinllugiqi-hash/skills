@@ -118,6 +118,7 @@ ALL_SKILLS = [
     "voice-changer",
     "voice-isolator",
     "setup-api-key",
+    "client-acquisition",
 ]
 
 
