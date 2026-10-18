@@ -1,18 +1,17 @@
 ---
 name: client-acquisition
-description: Automatically find and contact new clients for a website / web design business. Use when someone wants to get more customers for their web agency, find local businesses without a website or with outdated websites, audit websites to generate sales leads, send personalized cold outreach emails, or have an ElevenLabs voice agent call prospects.
+description: Automatically find and contact new clients for a website / web design business. Use when someone wants to get more customers for their web agency, find local businesses without a website or with outdated websites, audit websites to generate sales leads, or send personalized cold outreach emails with follow-ups.
 license: MIT
-compatibility: Requires Python 3.9+ and internet access. Uses a Google Places API key, SMTP credentials for sending email, and optionally an ElevenLabs API key with an agent and phone number for calls.
+compatibility: Requires Python 3.9+ and internet access. Uses a Google Places API key and SMTP credentials for sending email.
 metadata: {"openclaw": {"requires": {"env": ["GOOGLE_PLACES_API_KEY"]}, "primaryEnv": "GOOGLE_PLACES_API_KEY"}}
 ---
 
 # Client Acquisition for Website Businesses
 
-An automated pipeline that turns Google Maps listings into booked sales calls for a website/web design business:
+An automated pipeline that turns Google Maps listings into booked meetings for a website/web design business:
 
 ```
 find (Google Places) -> audit (website check + score) -> email outreach -> follow-up
-                                                       \-> ElevenLabs voice agent call (no email found)
 ```
 
 Everything is done by one dependency-free script, [`scripts/acquire.py`](scripts/acquire.py). State is kept in `leads.csv`, which can be opened in Excel or Google Sheets.
@@ -25,8 +24,6 @@ cp references/acquisition.example.json acquisition.json   # edit offer, sender, 
 export GOOGLE_PLACES_API_KEY="..."   # Google Cloud -> enable "Places API (New)"
 export SMTP_HOST="smtp.example.com" SMTP_PORT=465 SMTP_USER="..." SMTP_PASSWORD="..."
 export SENDER_EMAIL="max@muster-webdesign.de"
-# optional, for calls:
-export ELEVENLABS_API_KEY="..." ELEVENLABS_AGENT_ID="..." ELEVENLABS_PHONE_NUMBER_ID="..."
 ```
 
 Use a separate sending domain or mailbox (e.g. `hallo@get-musterweb.de`) with SPF, DKIM and DMARC set up so the main domain's reputation is protected.
@@ -40,12 +37,10 @@ python scripts/acquire.py report                                    # pipeline o
 python scripts/acquire.py outreach                                  # write .eml drafts to drafts/
 python scripts/acquire.py outreach --send --limit 20                # send highest-scoring leads
 python scripts/acquire.py followup --send --days 5                  # one follow-up after 5 days
-python scripts/acquire.py call                                      # preview calls
-python scripts/acquire.py call --dial --limit 10                    # call leads with phone but no email
 python scripts/acquire.py run --send                                # find+audit+outreach+followup (cron)
 ```
 
-Without `--send` / `--dial` nothing leaves the machine; review drafts first.
+Without `--send` nothing leaves the machine; review drafts first.
 
 ## How leads are scored
 
@@ -66,13 +61,12 @@ Plus up to 20 points for many Google reviews (established businesses that can pa
 
 ## Lead statuses
 
-`new` -> `contacted` / `called` -> set manually in `leads.csv` to `replied`, `won`, `not_interested` or `do_not_contact`. Leads in any of those final statuses are never contacted again. Each lead gets at most one initial email and one follow-up; `--limit` caps emails per day across both.
+`new` -> `contacted` -> set manually in `leads.csv` to `replied`, `won`, `not_interested` or `do_not_contact`. Leads in any of those final statuses are never contacted again. Each lead gets at most one initial email and one follow-up; `--limit` caps emails per day across both.
 
 ## Customizing
 
 - **Email text:** edit `references/templates/initial_email.txt` and `followup_email.txt`, or point `templates.initial_email` / `templates.followup_email` in `acquisition.json` at your own files. First line is the subject, then `---`, then the body. Placeholders: `{name}`, `{issue_bullets}`, `{reputation_line}`, `{offer}`, `{booking_link}`, `{sender_name}`, `{sender_company}`, `{sender_phone}`, `{sender_website}`, plus any `leads.csv` column.
 - **Target niches:** businesses that depend on local search convert best (Handwerker, Friseure, Physiotherapie, Restaurants, Ärzte, Kosmetik).
-- **Voice calls:** create the agent with the [agents skill](../agents/SKILL.md) using [references/voice-agent.md](references/voice-agent.md). The script passes `business_name`, `issues`, `sender_name`, `sender_company` and `offer` as dynamic variables and only dials between 09:00 and 18:00.
 
 ## Running it automatically
 

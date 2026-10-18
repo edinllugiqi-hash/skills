@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """Automated client acquisition for a website-building business.
 
-Pipeline:  find -> audit -> outreach (email) / call (ElevenLabs agent) -> followup
+Pipeline:  find -> audit -> outreach (email) -> followup
 
     python acquire.py find --query "Friseur" --city "München"
     python acquire.py audit
     python acquire.py outreach            # writes drafts only
     python acquire.py outreach --send     # sends via SMTP
     python acquire.py followup --send
-    python acquire.py call                # ElevenLabs outbound call for leads without email
     python acquire.py run --send          # everything above from acquisition.json (for cron)
 
 All state lives in leads.csv, which can be opened and edited in Excel/Sheets.
@@ -39,7 +38,7 @@ FIELDS = [
     "id", "name", "address", "phone", "website", "rating", "reviews", "query",
     "audited", "has_website", "https", "mobile_friendly", "load_seconds",
     "pagespeed", "copyright_year", "email", "issues", "score",
-    "status", "contacted_at", "followup_at", "called_at", "notes",
+    "status", "contacted_at", "followup_at", "notes",
 ]
 STOP_STATUSES = {"replied", "won", "not_interested", "do_not_contact", "bounced"}
 USER_AGENT = "Mozilla/5.0 (compatible; WebsiteAudit/1.0)"
@@ -402,55 +401,6 @@ def cmd_followup(args, cfg, leads, leads_path) -> None:
     send_batch(leads, cfg, args, leads_path, picks[:budget], "followup_email", "followup_at")
 
 
-# --------------------------------------------------------------------------- call
-
-def cmd_call(args, cfg, leads, leads_path) -> None:
-    """Outbound call via an ElevenLabs agent for leads that have a phone but no email."""
-    api_key = os.environ.get("ELEVENLABS_API_KEY")
-    agent_id = os.environ.get("ELEVENLABS_AGENT_ID") or cfg.get("elevenlabs", {}).get("agent_id")
-    phone_id = os.environ.get("ELEVENLABS_PHONE_NUMBER_ID") or cfg.get("elevenlabs", {}).get("agent_phone_number_id")
-    if args.dial and not (api_key and agent_id and phone_id):
-        sys.exit("ELEVENLABS_API_KEY, ELEVENLABS_AGENT_ID and ELEVENLABS_PHONE_NUMBER_ID are required with --dial.")
-    hour = datetime.now().hour
-    if args.dial and not 9 <= hour < 18:
-        sys.exit("Outside calling hours (09:00-18:00). Nothing dialed.")
-    min_score = cfg.get("min_score", 20)
-    picks = [
-        l for l in leads.values()
-        if l["status"] == "new" and l["phone"] and not l["email"] and not l["called_at"]
-        and l["audited"] and int(l["score"] or 0) >= min_score
-    ]
-    picks.sort(key=lambda l: -int(l["score"]))
-    for lead in picks[:args.limit]:
-        issue_keys = [i for i in lead["issues"].split(";") if i]
-        variables = {
-            "business_name": lead["name"],
-            "issues": " ".join(ISSUE_TEXT[i].format(**lead) for i in issue_keys[:2]),
-            "sender_name": cfg.get("sender", {}).get("name", ""),
-            "sender_company": cfg.get("sender", {}).get("company", ""),
-            "offer": cfg.get("offer", ""),
-        }
-        if not args.dial:
-            print(f"would call {lead['name']} {lead['phone']} with {json.dumps(variables, ensure_ascii=False)}")
-            continue
-        resp = http_json(
-            "https://api.elevenlabs.io/v1/convai/twilio/outbound-call",
-            {
-                "agent_id": agent_id,
-                "agent_phone_number_id": phone_id,
-                "to_number": lead["phone"],
-                "conversation_initiation_client_data": {"dynamic_variables": variables},
-            },
-            {"xi-api-key": api_key},
-        )
-        lead["called_at"] = now()
-        lead["status"] = "called"
-        lead["notes"] = (lead["notes"] + f" conversation_id={resp.get('conversation_id', '')}").strip()
-        save_leads(leads_path, leads)
-        print(f"called {lead['name']} -> {resp.get('conversation_id')}")
-        time.sleep(args.delay)
-
-
 # --------------------------------------------------------------------------- report
 
 def cmd_report(args, cfg, leads, leads_path) -> None:
@@ -499,11 +449,6 @@ def main() -> None:
             s.add_argument("--query", default=None)
             s.add_argument("--city", default="")
 
-    c = sub.add_parser("call", help="ElevenLabs outbound calls for leads without email")
-    c.add_argument("--dial", action="store_true", help="actually dial (default: preview)")
-    c.add_argument("--limit", type=int, default=10)
-    c.add_argument("--delay", type=float, default=30)
-
     sub.add_parser("report", help="pipeline summary")
 
     args = p.parse_args()
@@ -520,8 +465,6 @@ def main() -> None:
         cmd_outreach(args, cfg, leads, leads_path)
     elif args.cmd == "followup":
         cmd_followup(args, cfg, leads, leads_path)
-    elif args.cmd == "call":
-        cmd_call(args, cfg, leads, leads_path)
     elif args.cmd == "report":
         cmd_report(args, cfg, leads, leads_path)
     elif args.cmd == "run":

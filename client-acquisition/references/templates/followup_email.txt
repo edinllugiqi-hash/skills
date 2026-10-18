@@ -6,7 +6,7 @@ ich wollte kurz nachhaken, ob meine letzte Nachricht angekommen ist.
 
 Gerne erstelle ich Ihnen kostenlos einen ersten Entwurf, wie die neue Website von {name} aussehen könnte, ganz ohne Verpflichtung.
 
-Passt Ihnen ein kurzer Anruf? {booking_link}
+Passt Ihnen ein kurzes Gespräch? {booking_link}
 
 Viele Grüße
 {sender_name}

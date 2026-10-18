@@ -22,7 +22,7 @@ npx skills add elevenlabs/skills
 | [music](./music) | Generate music tracks using AI composition |
 | [voice-changer](./voice-changer) | Transform the voice in an audio recording into a different target voice (speech-to-speech) |
 | [voice-isolator](./voice-isolator) | Remove background noise and isolate vocals/speech from audio |
-| [client-acquisition](./client-acquisition) | Automatically find, audit and contact new clients for a website business (email + voice agent calls) |
+| [client-acquisition](./client-acquisition) | Automatically find, audit and contact new clients for a website business with personalized emails |
 | [setup-api-key](./setup-api-key) | Guide through obtaining and configuring an ElevenLabs API key |
 
 ## Configuration

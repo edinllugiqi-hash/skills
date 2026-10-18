@@ -6,12 +6,11 @@ Run every weekday at 08:30, keeping secrets in an env file:
 
 ```cron
 30 8 * * 1-5  cd /opt/akquise && set -a && . ./.env && set +a && python3 skills/client-acquisition/scripts/acquire.py run --send >> akquise.log 2>&1
-0 10 * * 1-5  cd /opt/akquise && set -a && . ./.env && set +a && python3 skills/client-acquisition/scripts/acquire.py call --dial --limit 10 >> akquise.log 2>&1
 ```
 
 ## GitHub Actions
 
-Store `GOOGLE_PLACES_API_KEY`, `SMTP_HOST`, `SMTP_USER`, `SMTP_PASSWORD`, `SENDER_EMAIL` (and optionally the ElevenLabs IDs) as repository secrets in a **private** repository, commit `acquisition.json`, and add `.github/workflows/akquise.yml`. The workflow commits the updated `leads.csv` back so state is kept between runs.
+Store `GOOGLE_PLACES_API_KEY`, `SMTP_HOST`, `SMTP_USER`, `SMTP_PASSWORD`, `SENDER_EMAIL` as repository secrets in a **private** repository, commit `acquisition.json`, and add `.github/workflows/akquise.yml`. The workflow commits the updated `leads.csv` back so state is kept between runs.
 
 ```yaml
 name: Kundenakquise

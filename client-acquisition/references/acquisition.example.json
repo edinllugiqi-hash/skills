@@ -11,9 +11,5 @@
     "phone": "+49 89 1234567",
     "website": "https://muster-webdesign.de"
   },
-  "elevenlabs": {
-    "agent_id": "",
-    "agent_phone_number_id": ""
-  },
   "templates": {}
 }
