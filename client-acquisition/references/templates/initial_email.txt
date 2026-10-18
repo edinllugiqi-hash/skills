@@ -1,0 +1,19 @@
+Subject: Kurze Frage zur Website von {name}
+---
+Guten Tag,
+
+ich bin {sender_name} von {sender_company}. Wir erstellen Websites für lokale Betriebe, und mir ist bei {name} Folgendes aufgefallen:
+
+{issue_bullets}
+
+{reputation_line}{offer}
+
+Hätten Sie diese oder nächste Woche 15 Minuten für ein kurzes, unverbindliches Gespräch? Termin direkt buchen: {booking_link}
+
+Viele Grüße
+{sender_name}
+{sender_company}
+{sender_phone}
+{sender_website}
+
+Sie möchten keine weiteren Nachrichten von uns? Antworten Sie einfach mit „Abmelden“.

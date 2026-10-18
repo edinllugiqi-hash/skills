@@ -1,0 +1,30 @@
+{
+  "skill_name": "client-acquisition",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I run a small web design agency in Munich. Set up an automated way to find hairdressers and physiotherapists with bad or missing websites and email them.",
+      "expected_output": "Setup steps and commands for the find, audit and outreach pipeline",
+      "files": [],
+      "expectations": [
+        "Creates or describes acquisition.json with queries for hairdressers and physiotherapists and Munich as a city",
+        "Uses GOOGLE_PLACES_API_KEY for finding businesses",
+        "Runs the audit step before outreach",
+        "Reviews drafts before sending with --send",
+        "Mentions a daily send limit or gradual ramp-up"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Run my client acquisition every weekday morning automatically using GitHub Actions.",
+      "expected_output": "A scheduled GitHub Actions workflow running acquire.py run --send",
+      "files": [],
+      "expectations": [
+        "Uses a schedule trigger with a weekday cron expression",
+        "Passes API keys and SMTP credentials from repository secrets",
+        "Runs acquire.py run --send",
+        "Persists leads.csv between runs"
+      ]
+    }
+  ]
+}

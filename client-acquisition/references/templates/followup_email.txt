@@ -1,0 +1,16 @@
+Subject: Re: Kurze Frage zur Website von {name}
+---
+Guten Tag,
+
+ich wollte kurz nachhaken, ob meine letzte Nachricht angekommen ist.
+
+Gerne erstelle ich Ihnen kostenlos einen ersten Entwurf, wie die neue Website von {name} aussehen könnte, ganz ohne Verpflichtung.
+
+Passt Ihnen ein kurzes Gespräch? {booking_link}
+
+Viele Grüße
+{sender_name}
+{sender_company}
+{sender_phone}
+
+Sie möchten keine weiteren Nachrichten von uns? Antworten Sie einfach mit „Abmelden“.

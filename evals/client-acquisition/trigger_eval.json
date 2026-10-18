@@ -1,0 +1,12 @@
+[
+  {"query": "find a way to automatically get new customers for my web design business", "should_trigger": true},
+  {"query": "finde lokale Firmen ohne Website und schreib ihnen automatisch eine E-Mail", "should_trigger": true},
+  {"query": "audit websites of restaurants in Berlin and list the ones with outdated sites as sales leads", "should_trigger": true},
+  {"query": "set up cold outreach emails for my website agency with automatic follow-ups", "should_trigger": true},
+  {"query": "Wie bekomme ich mehr Kunden für mein Webdesign-Business?", "should_trigger": true},
+  {"query": "generate speech from this text paragraph and save as an mp3 file", "should_trigger": false},
+  {"query": "build a voice assistant that answers questions about our product docs", "should_trigger": false},
+  {"query": "optimize the SEO of my own website's blog posts", "should_trigger": false},
+  {"query": "create an explosion sound effect for my game", "should_trigger": false},
+  {"query": "help me deploy a flask REST API to AWS with auto-scaling", "should_trigger": false}
+]

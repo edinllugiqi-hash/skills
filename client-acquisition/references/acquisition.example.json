@@ -1,0 +1,23 @@
+{
+  "queries": ["Friseur", "Physiotherapie", "Restaurant", "Handwerker", "Zahnarzt"],
+  "cities": ["München", "Augsburg"],
+  "min_score": 20,
+  "offer": "Aktuell bieten wir lokalen Betrieben eine komplette Website inkl. Google-Optimierung ab 990 € an, fertig in 14 Tagen.",
+  "booking_link": "https://cal.com/ihr-name/15min",
+  "sender": {
+    "name": "Max Mustermann",
+    "company": "Muster Webdesign",
+    "email": "max@muster-webdesign.de",
+    "phone": "+49 89 1234567",
+    "website": "https://muster-webdesign.de"
+  },
+  "brand": {
+    "color": "#2563eb",
+    "header_color": "#111827",
+    "background": "#f4f5f7",
+    "font": "Arial, Helvetica, sans-serif",
+    "logo_url": "https://muster-webdesign.de/logo-weiss.png"
+  },
+  "html": true,
+  "templates": {}
+}
