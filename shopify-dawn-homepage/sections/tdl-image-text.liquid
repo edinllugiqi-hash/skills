@@ -39,6 +39,26 @@
       <div class="tdl-image-text__content">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
+            {%- when 'logo' -%}
+              {%- comment -%} Ohne eigenes Bild wird das Logo aus den Theme-Einstellungen verwendet {%- endcomment -%}
+              {%- assign logo_image = block.settings.image | default: settings.logo -%}
+              {%- if logo_image != blank -%}
+                {%- liquid
+                  assign logo_width_2x = block.settings.width | times: 2
+                  assign logo_style = 'width: ' | append: block.settings.width | append: 'px;'
+                -%}
+                <div {{ block.shopify_attributes }}>
+                  {{
+                    logo_image
+                    | image_url: width: logo_width_2x
+                    | image_tag:
+                      class: 'tdl-image-text__logo',
+                      loading: 'lazy',
+                      style: logo_style,
+                      alt: shop.name
+                  }}
+                </div>
+              {%- endif -%}
             {%- when 'eyebrow' -%}
               <p class="tdl-section__eyebrow" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</p>
             {%- when 'heading' -%}
@@ -167,6 +187,29 @@
   ],
   "blocks": [
     {
+      "type": "logo",
+      "name": "Logo",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo",
+          "info": "Leer lassen, um das Logo aus den Theme-Einstellungen zu verwenden."
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "min": 60,
+          "max": 300,
+          "step": 10,
+          "unit": "px",
+          "label": "Breite",
+          "default": 160
+        }
+      ]
+    },
+    {
       "type": "eyebrow",
       "name": "Dachzeile",
       "limit": 1,
@@ -255,6 +298,7 @@
     {
       "name": "TDL Bild mit Text",
       "blocks": [
+        { "type": "logo" },
         { "type": "eyebrow" },
         { "type": "heading" },
         { "type": "text" },

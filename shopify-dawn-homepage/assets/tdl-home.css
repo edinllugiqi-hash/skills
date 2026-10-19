@@ -33,7 +33,7 @@
 }
 
 .tdl-stars {
-  --tdl-star-color: rgb(var(--color-foreground));
+  --tdl-star-color: rgb(var(--color-button));
   display: inline-flex;
   gap: 0.2rem;
   color: var(--tdl-star-color);
@@ -335,6 +335,7 @@
   text-align: center;
 }
 .tdl-feature__icon {
+  color: rgb(var(--color-button));
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -397,6 +398,7 @@
   margin-bottom: 1rem;
 }
 .tdl-image-text__list svg {
+  color: rgb(var(--color-button));
   width: 2rem;
   height: 2rem;
   flex-shrink: 0;
@@ -427,6 +429,13 @@
   .tdl-image-text--reverse .tdl-image-text__media {
     order: 2;
   }
+}
+
+.tdl-image-text__logo {
+  display: block;
+  max-width: var(--tdl-logo-width, 16rem);
+  height: auto;
+  margin-bottom: 1.6rem;
 }
 
 /* ---------- 7. Bewertungen ---------- */

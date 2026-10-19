@@ -32,3 +32,45 @@ deine Markenfarben und Typografie bleiben also erhalten.
 3. `templates/index.json` ersetzen (oder die Sektionen im Theme-Editor über
    „Sektion hinzufügen“ einzeln einfügen).
 4. Im Theme-Editor Bilder, Kollektionen (Bestseller, Bundles) und Texte setzen.
+
+## Playsori-Branding
+
+Logo, Farben und Schriften von Playsori (playsori.de) sind eingebunden:
+
+| Baustein | Wert | Herkunft |
+|---|---|---|
+| Logo | `F110C948-…_3-removebg-preview.png` (798 × 313, transparent) | Shopify-Dateien des Shops |
+| Favicon | `F110C948-….jpg` | Shopify-Dateien des Shops |
+| Primär / CTA | `#E91E8C` (Playsori-Pink) | Markenvorgabe |
+| Rosa-Akzent | `#ECA2CA` | bisheriges Shop-Theme |
+| Zartrosa-Fläche | `#FDF2F8` | aufgehellter Pink-Ton |
+| Creme-Fläche | `#FDFBF7` | bisheriges Shop-Theme |
+| Text | `#121212` | bisheriges Shop-Theme |
+| Überschriften | Quicksand Bold (`quicksand_n7`) | Markenvorgabe |
+| Fließtext | Harmonia Sans (`harmonia_sans_n4`) | bisheriges Shop-Theme |
+
+### Farbschemata (Dawn → Theme-Einstellungen → Farben)
+
+| Schema | Hintergrund | Text | Button / Label | Einsatz auf der Startseite |
+|---|---|---|---|---|
+| scheme-1 | `#FFFFFF` | `#121212` | `#E91E8C` / `#FFFFFF` | Kategorien, Bestseller, Story, Bundles, Blog, FAQ |
+| scheme-2 | `#FDF2F8` | `#121212` | `#E91E8C` / `#FFFFFF` | Hero, Vorteile |
+| scheme-3 | `#E91E8C` | `#FFFFFF` | `#FFFFFF` / `#E91E8C` | Sale-Badges, grosse Akzentflächen |
+| scheme-4 | `#ECA2CA` | `#121212` | `#121212` / `#FFFFFF` | Trust-Laufband, Newsletter |
+| scheme-5 | `#FDFBF7` | `#121212` | `#E91E8C` / `#FFFFFF` | Bewertungen |
+
+Sterne, Feature-Icons und Checklisten-Haken übernehmen die Button-Farbe des
+Schemas, sind also Playsori-Pink.
+
+Hinweis Lesbarkeit: Weisser Text auf `#E91E8C` hat ein Kontrastverhältnis von
+etwa 4,2:1. Das reicht für Buttons und grosse Überschriften, für kleinen
+Fliesstext ist scheme-3 daher nicht vorgesehen.
+
+### Übernahme
+
+- **Frisch duplizierter Dawn-Theme:** `playsori/settings_data.json` als
+  `config/settings_data.json` hochladen. **Achtung:** Die Datei ersetzt alle
+  globalen Theme-Einstellungen; bei einem bereits eingerichteten Theme die
+  Werte stattdessen manuell in den Theme-Einstellungen eintragen (Tabellen oben).
+- Der Logo-Block in „TDL Bild mit Text“ nutzt automatisch das Logo aus den
+  Theme-Einstellungen, ausser du wählst im Block ein eigenes Bild.
