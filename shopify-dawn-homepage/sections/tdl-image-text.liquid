@@ -1,0 +1,267 @@
+{{ 'tdl-home.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  .section-{{ section.id }}-padding .tdl-image-text__media {
+    --tdl-it-ratio: {{ section.settings.image_ratio }};
+    --tdl-it-radius: {{ section.settings.corner_radius | divided_by: 10.0 }}rem;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="tdl-image-text{% if section.settings.layout == 'text_first' %} tdl-image-text--reverse{% endif %}">
+      <div class="tdl-image-text__media">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 1500
+            | image_tag:
+              loading: 'lazy',
+              sizes: '(min-width: 750px) 50vw, 100vw',
+              widths: '375, 550, 750, 1100, 1500',
+              alt: section.settings.image.alt
+          }}
+        {%- else -%}
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      <div class="tdl-image-text__content">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'eyebrow' -%}
+              <p class="tdl-section__eyebrow" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</p>
+            {%- when 'heading' -%}
+              <h2 class="tdl-section__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                {{- block.settings.heading | escape -}}
+              </h2>
+            {%- when 'text' -%}
+              <div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+            {%- when 'checklist' -%}
+              <ul class="tdl-image-text__list" role="list" {{ block.shopify_attributes }}>
+                {%- assign lines = block.settings.items | newline_to_br | split: '<br />' -%}
+                {%- for line in lines -%}
+                  {%- assign item = line | strip -%}
+                  {%- if item != blank -%}
+                    <li>{%- render 'tdl-icon', icon: 'check-circle' -%}<span>{{ item | escape }}</span></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- when 'stats' -%}
+              <div class="tdl-image-text__stats" {{ block.shopify_attributes }}>
+                {%- for n in (1..3) -%}
+                  {%- assign value_key = 'value_' | append: n -%}
+                  {%- assign label_key = 'label_' | append: n -%}
+                  {%- if block.settings[value_key] != blank -%}
+                    <div>
+                      <span class="tdl-image-text__stat-value">{{ block.settings[value_key] | escape }}</span>
+                      <span class="tdl-image-text__stat-label">{{ block.settings[label_key] | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            {%- when 'button' -%}
+              {%- if block.settings.label != blank -%}
+                <a
+                  {% if block.settings.link != blank %}
+                    href="{{ block.settings.link }}"
+                  {% else %}
+                    role="link" aria-disabled="true"
+                  {% endif %}
+                  class="button {% if block.settings.style == 'secondary' %}button--secondary{% else %}button--primary{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
+                  {{- block.settings.label | escape -}}
+                </a>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "TDL Bild mit Text",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bild"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Bildformat",
+      "options": [
+        { "value": "1 / 1", "label": "Quadrat" },
+        { "value": "4 / 5", "label": "Hochformat" },
+        { "value": "3 / 2", "label": "Querformat" }
+      ],
+      "default": "1 / 1"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Eckenradius",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Anordnung Desktop",
+      "options": [
+        { "value": "image_first", "label": "Bild links" },
+        { "value": "text_first", "label": "Bild rechts" }
+      ],
+      "default": "image_first",
+      "info": "Auf Mobile steht das Bild immer oben."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Farbschema",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "eyebrow",
+      "name": "Dachzeile",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Unsere Geschichte" }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Überschrift",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Überschrift", "default": "Von Eltern für Eltern" },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Grösse",
+          "options": [
+            { "value": "h2", "label": "Klein" },
+            { "value": "h1", "label": "Mittel" },
+            { "value": "h0", "label": "Gross" }
+          ],
+          "default": "h1"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Erzähle hier, warum es deine Marke gibt und was sie besonders macht.</p>"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "name": "Checkliste",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "items",
+          "label": "Einträge",
+          "info": "Ein Eintrag pro Zeile.",
+          "default": "Entwickelt mit Pädagog:innen\nLanglebige Materialien\nFür jede Entwicklungsphase"
+        }
+      ]
+    },
+    {
+      "type": "stats",
+      "name": "Kennzahlen",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "value_1", "label": "Wert 1", "default": "10.000+" },
+        { "type": "text", "id": "label_1", "label": "Beschriftung 1", "default": "Familien" },
+        { "type": "text", "id": "value_2", "label": "Wert 2", "default": "4,8/5" },
+        { "type": "text", "id": "label_2", "label": "Beschriftung 2", "default": "Bewertung" },
+        { "type": "text", "id": "value_3", "label": "Wert 3" },
+        { "type": "text", "id": "label_3", "label": "Beschriftung 3" }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 2,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Text", "default": "Mehr erfahren" },
+        { "type": "url", "id": "link", "label": "Link" },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Stil",
+          "options": [
+            { "value": "primary", "label": "Primär" },
+            { "value": "secondary", "label": "Sekundär" }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TDL Bild mit Text",
+      "blocks": [
+        { "type": "eyebrow" },
+        { "type": "heading" },
+        { "type": "text" },
+        { "type": "checklist" },
+        { "type": "button" }
+      ]
+    }
+  ]
+}
+{% endschema %}
