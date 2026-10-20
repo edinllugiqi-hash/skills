@@ -1,0 +1,167 @@
+{{ 'tdl-home.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  .section-{{ section.id }}-padding .tdl-marquee__track {
+    --tdl-marquee-speed: {{ section.settings.speed }}s;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- capture items -%}
+  {%- for block in section.blocks -%}
+    <li class="tdl-marquee__item" {{ block.shopify_attributes }}>
+      {%- if block.settings.custom_icon != blank -%}
+        {{ block.settings.custom_icon | image_url: width: 80 | image_tag: loading: 'lazy', alt: '' }}
+      {%- else -%}
+        {%- render 'tdl-icon', icon: block.settings.icon -%}
+      {%- endif -%}
+      {%- if block.settings.link != blank -%}
+        <a href="{{ block.settings.link }}" class="link">{{ block.settings.text | escape }}</a>
+      {%- else -%}
+        <span>{{ block.settings.text | escape }}</span>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+{%- endcapture -%}
+
+<div class="tdl-marquee tdl-scope color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- if section.blocks.size > 0 -%}
+    <div class="tdl-marquee__track">
+      {%- comment -%}
+        Gerade Anzahl Gruppen, damit translateX(-50%) nahtlos loopt.
+        Nur die erste Gruppe ist für Screenreader sichtbar.
+      {%- endcomment -%}
+      {%- assign group_count = section.settings.repeat | times: 2 -%}
+      {%- for i in (1..group_count) -%}
+        <ul class="tdl-marquee__group" role="list"{% unless forloop.first %} aria-hidden="true"{% endunless %}>
+          {{- items -}}
+        </ul>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "TDL Trust-Laufband",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "s",
+      "label": "Dauer pro Durchlauf",
+      "info": "Höher = langsamer",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "repeat",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Wiederholungen",
+      "info": "Bei wenigen Einträgen erhöhen, damit das Band breit genug ist.",
+      "default": 2
+    },
+    {"type": "select", "id": "color_scheme", "label": "Farbschema", "options": [{"value": "background-1", "label": "Weiss"}, {"value": "background-2", "label": "Zartrosa"}, {"value": "accent-1", "label": "Playsori-Pink"}, {"value": "accent-2", "label": "Rosa"}, {"value": "inverse", "label": "Dunkel"}], "default": "background-2"},
+    {
+      "type": "header",
+      "content": "Abstände"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Eintrag",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "none", "label": "Keines" },
+            { "value": "check", "label": "Haken" },
+            { "value": "check-circle", "label": "Haken im Kreis" },
+            { "value": "shield", "label": "Schild" },
+            { "value": "leaf", "label": "Blatt" },
+            { "value": "truck", "label": "Lieferwagen" },
+            { "value": "return", "label": "Rückgabe" },
+            { "value": "heart", "label": "Herz" },
+            { "value": "baby", "label": "Baby" },
+            { "value": "puzzle", "label": "Puzzle" },
+            { "value": "lock", "label": "Schloss" },
+            { "value": "gift", "label": "Geschenk" },
+            { "value": "chat", "label": "Sprechblase" },
+            { "value": "star", "label": "Stern" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Eigenes Icon",
+          "info": "Ersetzt das Icon oben. Quadratisch, mind. 80 × 80 px."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Kostenloser Versand ab 50 €"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TDL Trust-Laufband",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck", "text": "Kostenloser Versand ab 50 €" } },
+        { "type": "item", "settings": { "icon": "return", "text": "30 Tage Geld-zurück-Garantie" } },
+        { "type": "item", "settings": { "icon": "leaf", "text": "BPA-frei" } },
+        { "type": "item", "settings": { "icon": "shield", "text": "CE-zertifiziert" } },
+        { "type": "item", "settings": { "icon": "heart", "text": "Von Eltern geliebt" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
