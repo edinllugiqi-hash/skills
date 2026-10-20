@@ -201,7 +201,7 @@
       ],
       "settings": {
         "heading": "Warum Eltern uns vertrauen",
-        "columns_mobile": 2,
+        "columns_mobile": "2",
         "columns_desktop": 4,
         "color_scheme": "scheme-2"
       }

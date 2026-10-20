@@ -265,7 +265,7 @@
       "settings": {
         "heading": "Darum lieben Familien das Storybook",
         "heading_size": "h1",
-        "columns_mobile": 1,
+        "columns_mobile": "1",
         "columns_desktop": 4,
         "color_scheme": "background-2",
         "padding_top": 48,
