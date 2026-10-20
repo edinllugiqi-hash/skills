@@ -1,0 +1,658 @@
+{
+  "sections": {
+    "main": {
+      "type": "ps-main-product",
+      "blocks": {
+        "eyebrow": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "MONTESSORI QUIET BOOK",
+            "rating_stars": 5,
+            "rating_text": "(2846 Bewertungen)",
+            "rating_link": "#bewertungen"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_override": "Playsori Storybook – Mitmach-Filzbuch ab 3 Jahren"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "sale_label": "Angebot",
+            "show_compare": true,
+            "show_save_badge": false,
+            "shipping_text": "inkl. <strong>KOSTENLOSEM</strong> Versand"
+          }
+        },
+        "stock": {
+          "type": "stock",
+          "settings": {
+            "in_stock": "Auf Lager",
+            "delivery": "Lieferung in 3–4 Werktagen",
+            "sold_out": "Momentan ausverkauft"
+          }
+        },
+        "sets": {
+          "type": "sets",
+          "settings": {
+            "label": "Set wählen:",
+            "show_preview": true,
+            "preview_image": "shopify://shop_images/E328E563-9784-49AF-B632-CBFCDFF739BC.png",
+            "preview_hint": "Bild: Storybook-Sets nebeneinander (1, 2 und 3 Bücher)",
+            "preview_note": "So sieht dein Set aus",
+            "preselect": "2",
+            "show_per_unit": true,
+            "show_saving": false,
+            "qty_1": 1,
+            "title_1": "1 Storybook",
+            "sub_1": "Gratis-Versand",
+            "pct_1": 0,
+            "badge_1": "",
+            "qty_2": 2,
+            "title_2": "2 Storybooks",
+            "sub_2": "Geschwister-Set · 20 % Mengenrabatt",
+            "pct_2": 20,
+            "badge_2": "",
+            "qty_3": 3,
+            "title_3": "3 Storybooks",
+            "sub_3": "Familien-Set · 30 % Mengenrabatt",
+            "pct_3": 30,
+            "badge_3": "Bester Preis",
+            "note": "Der Mengenrabatt wird im Warenkorb automatisch abgezogen."
+          }
+        },
+        "trust": {
+          "type": "trust",
+          "settings": {
+            "icon_1": "check",
+            "text_1": "Weicher, hochwertiger Filz",
+            "icon_2": "scissors",
+            "text_2": "Handgenäht",
+            "icon_3": "truck",
+            "text_3": "Gratis-Versand",
+            "icon_4": "return",
+            "text_4": "14 Tage Widerruf"
+          }
+        },
+        "buy": {
+          "type": "buy",
+          "settings": {
+            "label": "In den Warenkorb",
+            "sold_out_label": "Ausverkauft",
+            "show_dynamic_checkout": false
+          }
+        },
+        "payment": {
+          "type": "payment",
+          "settings": {
+            "label": "Sicher bezahlen mit"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow",
+        "title",
+        "price",
+        "stock",
+        "sets",
+        "trust",
+        "buy",
+        "payment",
+        "description"
+      ],
+      "settings": {
+        "media_source": "product",
+        "captions": "",
+        "gallery_fit": "contain",
+        "gallery_bg": "#ffffff",
+        "show_zoom": true,
+        "show_sticky": false,
+        "sticky_label": "In den Warenkorb",
+        "heading_font": "quicksand_n7",
+        "bg": "#fffaf6",
+        "padding_top": 32,
+        "padding_bottom": 56
+      }
+    },
+    "ps_spielwelt": {
+      "type": "ps-play-world",
+      "blocks": {
+        "vorteil_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/A58C7527-4C52-444A-BB0C-C30485158B17.png",
+            "show_placeholder": true,
+            "icon": "shapes",
+            "title": "Konzentration fördern",
+            "text": "Jede Seite stellt eine kleine Aufgabe – vom Schnallen-Öffnen bis zum Wäscheklammer-Drücken. Das hält die Aufmerksamkeit und übt Ausdauer."
+          }
+        },
+        "vorteil_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/52A00CF6-DDC7-4679-9CAA-E9005DD8E494.png",
+            "show_placeholder": true,
+            "icon": "heart",
+            "title": "Sinne wecken",
+            "text": "Weicher Filz, echte Verschlüsse und bewegliche Teile zum Anfassen: Kinder begreifen die Welt zuerst mit den Händen."
+          }
+        },
+        "vorteil_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/EDB201C7-4542-4772-8ABB-ECEEEAD14947.png",
+            "show_placeholder": true,
+            "icon": "buckle",
+            "title": "Feinmotorik trainieren",
+            "text": "Greifen, drücken, öffnen, schließen – genau die Handgriffe, die später beim Anziehen, Malen und Schneiden helfen."
+          }
+        }
+      },
+      "block_order": [
+        "vorteil_1",
+        "vorteil_2",
+        "vorteil_3"
+      ],
+      "settings": {
+        "heading": "Neun Spielwelten in einem Buch.",
+        "text": "",
+        "heading_font": "quicksand_n7",
+        "bg": "#fffaf6",
+        "wave_shape": "none",
+        "wave_color": "#fffaf6",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "ps_alltag": {
+      "type": "ps-experts",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "image": "shopify://shop_images/CE2D6DA0-874D-45D6-A240-49F062584B88.png",
+            "caption": "Im Restaurant",
+            "name": "",
+            "role": ""
+          }
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "image": "shopify://shop_images/07A51299-0D1C-4094-A75A-59E28AFEE7DA.png",
+            "caption": "Im Wartezimmer",
+            "name": "",
+            "role": ""
+          }
+        },
+        "video_3": {
+          "type": "video",
+          "settings": {
+            "image": "shopify://shop_images/sps3.png",
+            "caption": "Auf der Autofahrt",
+            "name": "",
+            "role": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_2",
+        "video_3"
+      ],
+      "settings": {
+        "eyebrow": "Aus dem Alltag",
+        "heading": "Echte Familien.\nEchte Momente.",
+        "text": "<p>Unterwegs, beim Warten, am Küchentisch: Das Storybook ist für die Momente gemacht, in denen Kinder eine ruhige Beschäftigung brauchen. Leicht, mit Strap-Verschluss und passend für jede Tasche – ganz ohne Bildschirm und Akku.</p>",
+        "per_view": 3,
+        "video_hint": "Video (Hochformat): Familie nutzt das Storybook im Alltag",
+        "button_label": "",
+        "button_link": "",
+        "heading_font": "quicksand_n7",
+        "bg": "#fffaf6",
+        "wave_shape": "none",
+        "wave_color": "#fffaf6",
+        "padding_top": 56,
+        "padding_bottom": 64
+      }
+    },
+    "ps_zitat_infos": {
+      "type": "ps-quote-info",
+      "blocks": {
+        "lieferung": {
+          "type": "table",
+          "settings": {
+            "title": "Lieferung",
+            "icon": "truck",
+            "rows": "Land | Lieferzeit | Versand\nDeutschland | 3–4 Werktage | kostenlos",
+            "first_row_header": true,
+            "note": "<p>Wir liefern aktuell nur innerhalb Deutschlands. Sobald dein Paket unterwegs ist, bekommst du die Sendungsverfolgung per E-Mail.</p>"
+          }
+        },
+        "produktinfos": {
+          "type": "item",
+          "settings": {
+            "title": "Weitere Produktinformationen",
+            "icon": "book",
+            "content": "<p><strong>Alter:</strong> empfohlen ab 3 Jahren – enthält Kleinteile</p><p><strong>Material:</strong> weicher Filz mit echten Schnallen und Wäscheklammern</p><p><strong>Umfang:</strong> 9 Themenseiten, Strap-Verschluss zum Mitnehmen</p><p><strong>Themenseiten:</strong> Marktstand, Badezimmer mit Spiegel, Feuerwehr &amp; Bagger, Pilzwald, Rakete, Unterwasserwelt, Familie, Rucksack mit Schnallen, Früchte</p><p><strong>Pflege:</strong> feucht abwischen oder per Hand waschen und an der Luft trocknen – nicht in die Waschmaschine</p>"
+          }
+        },
+        "produktsicherheit": {
+          "type": "item",
+          "settings": {
+            "title": "Produktsicherheit & Herstellerangaben",
+            "icon": "shield",
+            "content": "<p><strong>Herkunft:</strong> Hergestellt in China</p><p><strong>Hersteller:</strong> [Name des Herstellers], [Anschrift des Herstellers, China]</p><p><strong>Importeur und verantwortliche Person in der EU:</strong> Playsori – Inh. Edin Llugiqi, Fichtestraße 40, 85055 Ingolstadt, Deutschland · <a href=\"mailto:support@playsori.de\">support@playsori.de</a></p><p><strong>Produkt:</strong> Playsori Storybook (Mitmach-Filzbuch)</p><p><strong>Warnhinweis:</strong> Achtung! Nicht für Kinder unter 36 Monaten geeignet. Enthält verschluckbare Kleinteile – Erstickungsgefahr.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "lieferung",
+        "produktinfos",
+        "produktsicherheit"
+      ],
+      "settings": {
+        "heading": "",
+        "show_quote": false,
+        "show_image": true,
+        "image": "shopify://shop_images/PHOTO-2026-10-09-01-51-34.jpg",
+        "quote": "",
+        "name": "",
+        "role": "",
+        "image_position": "left",
+        "open_first": false,
+        "heading_font": "quicksand_n7",
+        "bg": "#fffaf6",
+        "card_bg": "#fff0f7",
+        "wave_shape": "none",
+        "wave_color": "#fffaf6",
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    },
+    "ps_passt_dazu": {
+      "type": "ps-product-slider",
+      "blocks": {
+        "platzhalter_1": {
+          "type": "placeholder",
+          "settings": {
+            "title": "[Passendes Produkt]",
+            "subtitle": "[Kurzbeschreibung]",
+            "price_text": "[Preis]",
+            "badge": "",
+            "link": "",
+            "card_bg": "#fff0f7"
+          }
+        },
+        "platzhalter_2": {
+          "type": "placeholder",
+          "settings": {
+            "title": "[Passendes Produkt]",
+            "subtitle": "[Kurzbeschreibung]",
+            "price_text": "[Preis]",
+            "badge": "",
+            "link": "",
+            "card_bg": "#fdf5e8"
+          }
+        },
+        "platzhalter_3": {
+          "type": "placeholder",
+          "settings": {
+            "title": "[Passendes Produkt]",
+            "subtitle": "[Kurzbeschreibung]",
+            "price_text": "[Preis]",
+            "badge": "",
+            "link": "",
+            "card_bg": "#eaf4ec"
+          }
+        },
+        "platzhalter_4": {
+          "type": "placeholder",
+          "settings": {
+            "title": "[Passendes Produkt]",
+            "subtitle": "[Kurzbeschreibung]",
+            "price_text": "[Preis]",
+            "badge": "",
+            "link": "",
+            "card_bg": "#efeafc"
+          }
+        }
+      },
+      "block_order": [
+        "platzhalter_1",
+        "platzhalter_2",
+        "platzhalter_3",
+        "platzhalter_4"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Passt perfekt dazu",
+        "subheading": "",
+        "link_label": "Alle anzeigen",
+        "link": "",
+        "anchor": "",
+        "per_view": 4,
+        "show_quick_add": true,
+        "show_compare": true,
+        "sale_label": "Angebot",
+        "shipping_note": "Gratis-Versand",
+        "heading_font": "quicksand_n7",
+        "bg": "#fffaf6",
+        "wave_shape": "none",
+        "wave_color": "#fffaf6",
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    },
+    "ps_empfehlen": {
+      "type": "ps-app-slot",
+      "disabled": true,
+      "settings": {
+        "icon": "gift",
+        "heading": "[Empfehlungsprogramm: Freunde einladen]",
+        "text": "<p>[Kurzer Text zu eurem Empfehlungsprogramm – nur verwenden, wenn ihr eins anbietet.]</p>",
+        "placeholder_text": "Platzhalter: Hier erscheint das Formular deiner Empfehlungs-App (im Theme-Editor als App-Block einfügen).",
+        "heading_font": "quicksand_n7",
+        "bg": "#fffaf6",
+        "wave_shape": "none",
+        "wave_color": "#fffaf6",
+        "padding_top": 40,
+        "padding_bottom": 48
+      }
+    },
+    "ps_service": {
+      "type": "ps-wave-media-text",
+      "settings": {
+        "image": "shopify://shop_images/D44D9C54-9B27-4DEA-B069-33321C92D1D7.png",
+        "image_hint": "Bild (Querformat): Elternteil mit Kind und Storybook – persönlich & nahbar",
+        "image_position": "left",
+        "show_deco": true,
+        "deco_image": "shopify://shop_images/h-kchen-icon-playsori.png",
+        "eyebrow": "Persönlicher Service",
+        "heading": "Fragen? Wir sind\nfür dich da.",
+        "text": "<p>Du bist dir unsicher, ob das Storybook zu deinem Kind passt, oder hast eine Frage zu deiner Bestellung? Schreib uns – wir antworten persönlich und helfen dir gern weiter.</p>",
+        "button_label": "Zum Kontakt →",
+        "button_link": "shopify://pages/contact",
+        "heading_font": "quicksand_n7",
+        "bg": "#fffaf6",
+        "show_band": true,
+        "band_color": "#e5f1fa",
+        "wave_shape": "none",
+        "wave_color": "#ffffff",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "ps_warum": {
+      "type": "ps-usp-icons",
+      "blocks": {
+        "usp_1": {
+          "type": "usp",
+          "settings": {
+            "icon": "spool",
+            "title": "Handgenäht",
+            "text": "Jedes Storybook wird aus weichem Filz von Hand genäht."
+          }
+        },
+        "usp_2": {
+          "type": "usp",
+          "settings": {
+            "icon": "shapes",
+            "title": "Montessori-inspiriert",
+            "text": "Selbst entdecken im eigenen Tempo – mit echten Alltags-Handgriffen."
+          }
+        },
+        "usp_3": {
+          "type": "usp",
+          "settings": {
+            "icon": "screen-off",
+            "title": "Ohne Bildschirm",
+            "text": "Kein Akku, keine App, keine Werbung – nur Filz und Fantasie."
+          }
+        },
+        "usp_4": {
+          "type": "usp",
+          "settings": {
+            "icon": "chat",
+            "title": "Persönlicher Service",
+            "text": "Fragen? Wir antworten persönlich – und versenden kostenlos in ganz Deutschland."
+          }
+        }
+      },
+      "block_order": [
+        "usp_1",
+        "usp_2",
+        "usp_3",
+        "usp_4"
+      ],
+      "settings": {
+        "heading": "Warum Playsori?",
+        "heading_font": "quicksand_n7",
+        "bg": "#ffffff",
+        "wave_shape": "none",
+        "wave_color": "#e5f1fa",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "ps_faq": {
+      "type": "ps-faq",
+      "blocks": {
+        "frage_1": {
+          "type": "question",
+          "settings": {
+            "question": "Ist das Storybook seinen Preis wert?",
+            "answer": "<p>Du bekommst ein handgenähtes Filzbuch mit 9 Themenseiten voller echter Handgriffe – Schnallen, Wäscheklammern und bewegliche Teile zum immer wieder Aufschlagen, zu Hause und unterwegs. Ab 2 Stück sparst du automatisch 20 %, ab 3 Stück 30 %.</p>"
+          }
+        },
+        "frage_2": {
+          "type": "question",
+          "settings": {
+            "question": "Für welches Alter ist das Storybook geeignet?",
+            "answer": "<p>Das Storybook wird <strong>ab 3 Jahren</strong> empfohlen, weil es Kleinteile wie Schnallen und Wäscheklammern enthält. Jüngere Kinder sollten nur unter Aufsicht eines Erwachsenen damit spielen.</p>"
+          }
+        },
+        "frage_3": {
+          "type": "question",
+          "settings": {
+            "question": "Mein Kind steckt noch alles in den Mund – passt das Storybook schon?",
+            "answer": "<p>Wegen der Kleinteile empfehlen wir das Storybook erst ab 3 Jahren. Wenn jüngere Geschwister mitspielen, dann bitte nur unter Aufsicht eines Erwachsenen.</p>"
+          }
+        },
+        "frage_4": {
+          "type": "question",
+          "settings": {
+            "question": "Wie lange dauert die Lieferung?",
+            "answer": "<p>Die Lieferzeit beträgt ca. 3–4 Werktage. Sobald dein Paket unterwegs ist, bekommst du eine Tracking-Nummer per E-Mail.</p>"
+          }
+        },
+        "frage_5": {
+          "type": "question",
+          "settings": {
+            "question": "Wie reinige ich das Filzbuch?",
+            "answer": "<p>Am besten mit einem feuchten Tuch abwischen oder per Handwäsche mit mildem Waschmittel reinigen und an der Luft trocknen lassen. Bitte nicht in die Waschmaschine oder den Trockner geben.</p>"
+          }
+        },
+        "frage_6": {
+          "type": "question",
+          "settings": {
+            "question": "Was, wenn das Storybook nicht gefällt?",
+            "answer": "<p>Du hast ein 14-tägiges Widerrufsrecht. Alle Details findest du in unserer <a href=\"/pages/widerrufsbelehrung\">Widerrufsbelehrung</a>.</p>"
+          }
+        },
+        "frage_7": {
+          "type": "question",
+          "settings": {
+            "question": "Wird ein Filzbuch nicht schnell langweilig?",
+            "answer": "<p>Jede der 9 Themenseiten hat eigene Aufgaben – vom Marktstand über die Feuerwehr bis zur Unterwasserwelt. Dazu lassen sich zu jeder Seite Geschichten erfinden, so entdeckt dein Kind immer wieder Neues.</p>"
+          }
+        },
+        "frage_8": {
+          "type": "question",
+          "settings": {
+            "question": "Gibt es einen Mengenrabatt?",
+            "answer": "<p>Ja! Ab 2 Stück sparst du 20 %, ab 3 Stück sogar 30 % – der Rabatt wird im Warenkorb automatisch abgezogen. Perfekt als Geschwister- oder Familien-Set.</p>"
+          }
+        },
+        "frage_9": {
+          "type": "question",
+          "settings": {
+            "question": "Was kostet der Versand?",
+            "answer": "<p>Nichts – der Standardversand innerhalb Deutschlands ist für jede Bestellung kostenlos. Wir liefern aktuell nur nach Deutschland.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "frage_1",
+        "frage_2",
+        "frage_3",
+        "frage_4",
+        "frage_5",
+        "frage_6",
+        "frage_7",
+        "frage_8",
+        "frage_9"
+      ],
+      "settings": {
+        "heading": "Häufige Fragen",
+        "subheading": "Alles, was du vor dem Kauf wissen möchtest",
+        "open_first": false,
+        "faq_schema": true,
+        "heading_font": "quicksand_n7",
+        "bg": "#e5f1fa",
+        "wave_shape": "none",
+        "wave_color": "#fffaf6",
+        "padding_top": 64,
+        "padding_bottom": 72
+      }
+    },
+    "ps_bewertungen": {
+      "type": "ps-product-reviews",
+      "blocks": {
+        "bewertung_1": {
+          "type": "review",
+          "settings": {
+            "name": "David",
+            "meta": "",
+            "rating": 5,
+            "title": "Super für ruhige Spielmomente",
+            "text": "„Super für ruhige Spielmomente.\nUnser Kind schaut sich das Buch immer wieder gerne an und entdeckt jedes Mal etwas Neues. Die Seiten sind liebevoll gemacht und perfekt zum Greifen, Öffnen und Ausprobieren.“"
+          }
+        },
+        "bewertung_2": {
+          "type": "review",
+          "settings": {
+            "name": "Meiling",
+            "meta": "",
+            "rating": 5,
+            "title": "Unsere Rettung im täglichen Stau!",
+            "text": "„Es ist faszinierend zu sehen, wie konzentriert sie die verschiedenen Aufgaben löst. Besonders die Schnallen und Klettverschlüsse haben es ihr angetan. Eine wunderbare Möglichkeit, die Feinmotorik ganz nebenbei auf der Rückbank zu trainieren. Wirklich toll verarbeitet!“"
+          }
+        },
+        "bewertung_3": {
+          "type": "review",
+          "settings": {
+            "name": "Marco",
+            "meta": "",
+            "rating": 4.5,
+            "title": "Endlich spielen sie friedlich zusammen!",
+            "text": "„Ich war anfangs skeptisch, ob ein Buch beide (3 und 5 Jahre alt) gleichzeitig begeistern kann. Aber sie lieben es! Vor allem die Raketen-Seite wird hier rauf und runter bespielt. Die Qualität ist super und es hält einiges aus, auch wenn mal etwas wilder damit umgegangen wird. Klare Kaufempfehlung!“"
+          }
+        },
+        "bewertung_4": {
+          "type": "review",
+          "settings": {
+            "name": "Lara",
+            "meta": "",
+            "rating": 4.5,
+            "title": "Ein echter Lebensretter für lange Autofahrten!",
+            "text": "„Ich habe das Buch für unseren Urlaub gekauft und der Unterschied ist riesig! Meine Tochter hat sich stundenlang damit beschäftigt. Keine Quengelei, kein iPad nötig. Es ist jeden Cent wert für alle Eltern, die eine sinnvolle und ruhige Beschäftigung suchen“"
+          }
+        },
+        "bewertung_5": {
+          "type": "review",
+          "settings": {
+            "name": "Sarah",
+            "meta": "",
+            "rating": 5,
+            "title": "Perfekt für konzentriertes Lernen!",
+            "text": "„Dieses Buch ist ein absolutes Highlight! Mein Junge  sitzt völlig vertieft daran und trainiert spielerisch Feinmotorik und Konzentration. Die hochwertigen Materialien und durchdachten Aktivitäten begeistern wirklich – genau das, was Montessori-Pädagogik ausmacht. Ich kann es jedem empfehlen, der sein Kind sinnvoll fördern möchte!“"
+          }
+        }
+      },
+      "block_order": [
+        "bewertung_1",
+        "bewertung_2",
+        "bewertung_3",
+        "bewertung_4",
+        "bewertung_5"
+      ],
+      "settings": {
+        "heading": "Kundenbewertungen",
+        "anchor": "bewertungen",
+        "score": "4,8",
+        "stars": 5,
+        "count_text": "Basierend auf 2846 Bewertungen",
+        "attr_1": "Qualität",
+        "attr_1_scale": "Schwach | Ok | Top",
+        "attr_1_value": 0,
+        "attr_2": "Spielspaß",
+        "attr_2_scale": "Langweilig | Ganz gut | Super spannend",
+        "attr_2_value": 0,
+        "write_label": "Bewertung schreiben",
+        "write_link": "",
+        "tab_reviews": "Produktbewertungen",
+        "tab_questions": "Fragen",
+        "empty_text": "[Hier erscheinen eure echten Kundenbewertungen.]",
+        "questions_text": "[Hier erscheinen Fragen & Antworten – z. B. aus eurer Bewertungs-App.]",
+        "heading_font": "quicksand_n7",
+        "bg": "#fffaf6",
+        "wave_shape": "none",
+        "wave_color": "#ffffff",
+        "padding_top": 64,
+        "padding_bottom": 72
+      }
+    },
+    "ps_newsletter": {
+      "type": "ps-newsletter",
+      "settings": {
+        "image": "shopify://shop_images/IMG_9319.webp",
+        "psst": "Psst …",
+        "heading": "<strong>10 %</strong> auf dein erstes Storybook – Lust?",
+        "placeholder": "Deine E-Mail-Adresse",
+        "button_label": "Anmelden & 10 % sichern",
+        "legal": "Mit der Anmeldung erhältst du unseren Newsletter – Abmeldung jederzeit möglich. Mehr in der <a href=\"/policies/privacy-policy\">Datenschutzerklärung</a>.",
+        "success_text": "<p>Danke für deine Anmeldung! Dein Rabattcode: <strong>MONTI10</strong></p>",
+        "heading_font": "quicksand_n7",
+        "bg": "#ffffff",
+        "wave_shape": "none",
+        "wave_color": "#fffaf6",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ps_spielwelt",
+    "ps_alltag",
+    "ps_zitat_infos",
+    "ps_passt_dazu",
+    "ps_empfehlen",
+    "ps_service",
+    "ps_warum",
+    "ps_faq",
+    "ps_bewertungen",
+    "ps_newsletter"
+  ]
+}

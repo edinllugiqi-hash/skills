@@ -1,0 +1,314 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "e6750b05-7703-4f69-ab7c-9ffb0acf18fb": {
+      "type": "slideshow",
+      "blocks": {
+        "template--18472095940937__e6750b05-7703-4f69-ab7c-9ffb0acf18fb-16798645128eb8005e-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7884.jpg",
+            "heading": "Spielend lernen – ganz ohne Bildschirm",
+            "heading_size": "h1",
+            "subheading": "Das Playsori™ Storybook: Montessori-inspiriertes Filz-Spielbuch, das kleine Hände beschäftigt und die Konzentration fördert.",
+            "button_label": "Jetzt entdecken",
+            "link": "/products/playsori-storybook",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--18472095940937__e6750b05-7703-4f69-ab7c-9ffb0acf18fb-16798645128eb8005e-0"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "show_text_below": true,
+        "accessibility_info": "Slideshow über das Playsori Storybook"
+      }
+    },
+    "d8b7c7f2-8a7b-486d-b2c1-184eea98110d": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "template--18472095940937__d8b7c7f2-8a7b-486d-b2c1-184eea98110d-1679864525e35c34e4-0": {
+          "type": "text",
+          "settings": {
+            "title": "Echte Schnallen, Klammern",
+            "link": ""
+          }
+        },
+        "template--18472095940937__d8b7c7f2-8a7b-486d-b2c1-184eea98110d-1679864525e35c34e4-1": {
+          "type": "text",
+          "settings": {
+            "title": "Fördert Feinmotorik & Konzentration",
+            "link": ""
+          }
+        },
+        "template--18472095940937__d8b7c7f2-8a7b-486d-b2c1-184eea98110d-1679864525e35c34e4-2": {
+          "type": "text",
+          "settings": {
+            "title": "Leicht & perfekt für unterwegs",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18472095940937__d8b7c7f2-8a7b-486d-b2c1-184eea98110d-1679864525e35c34e4-0",
+        "template--18472095940937__d8b7c7f2-8a7b-486d-b2c1-184eea98110d-1679864525e35c34e4-1",
+        "template--18472095940937__d8b7c7f2-8a7b-486d-b2c1-184eea98110d-1679864525e35c34e4-2"
+      ],
+      "settings": {
+        "speed": 2,
+        "text_spacing": 2,
+        "text_size": "1.75",
+        "italic_text": false,
+        "uppercase_text": false,
+        "bold_text": false,
+        "color_scheme": "accent-1",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "playsori-featured": {
+      "type": "featured-product",
+      "blocks": {
+        "pf-title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "pf-price": {
+          "type": "price",
+          "settings": {}
+        },
+        "pf-buy": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        }
+      },
+      "block_order": [
+        "pf-title",
+        "pf-price",
+        "pf-buy"
+      ],
+      "settings": {
+        "product": "playsori-storybook",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "eab98bdb-f257-46ac-a548-66c24089d95a": {
+      "type": "comparison-table",
+      "blocks": {
+        "template--18472095940937__eab98bdb-f257-46ac-a548-66c24089d95a-167986455514a8e470-0": {
+          "type": "row",
+          "settings": {
+            "benefit": "Training für kleine Hände: greifen, schnallen, klemmen",
+            "us": true,
+            "others": false
+          }
+        },
+        "template--18472095940937__eab98bdb-f257-46ac-a548-66c24089d95a-167986455514a8e470-1": {
+          "type": "row",
+          "settings": {
+            "benefit": "Ruhige Beschäftigung ohne Reizüberflutung",
+            "us": true,
+            "others": false
+          }
+        },
+        "template--18472095940937__eab98bdb-f257-46ac-a548-66c24089d95a-167986455514a8e470-2": {
+          "type": "row",
+          "settings": {
+            "benefit": "Kein Akku, keine Werbung, kein blaues Licht",
+            "us": true,
+            "others": false
+          }
+        },
+        "d4c65361-b69b-4224-8ea3-3f8565f6b66a": {
+          "type": "row",
+          "settings": {
+            "benefit": "Endloses Wischen & Überstimulation",
+            "us": false,
+            "others": true
+          }
+        }
+      },
+      "block_order": [
+        "template--18472095940937__eab98bdb-f257-46ac-a548-66c24089d95a-167986455514a8e470-0",
+        "template--18472095940937__eab98bdb-f257-46ac-a548-66c24089d95a-167986455514a8e470-1",
+        "template--18472095940937__eab98bdb-f257-46ac-a548-66c24089d95a-167986455514a8e470-2",
+        "d4c65361-b69b-4224-8ea3-3f8565f6b66a"
+      ],
+      "settings": {
+        "title": "Spielbuch statt Bildschirm",
+        "heading_size": "h1",
+        "text": "<p>Warum Eltern für ruhige Momente zum Storybook greifen – statt zum Tablet.</p>",
+        "button_label": "Jetzt entdecken",
+        "link": "/products/playsori-storybook",
+        "button_style_secondary": false,
+        "layout": "table_second",
+        "color_scheme": "background-1",
+        "logo_width": 75,
+        "us_label": "PLAYSORI™",
+        "others_label": "TABLET & APPS",
+        "benefit_color_scheme": "accent-1",
+        "checkmark_color": "#53af01",
+        "icon_cells_color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "bb0df407-4b1e-45f0-a6fa-a64b51c078eb": {
+      "type": "icon-bar",
+      "blocks": {
+        "template--18472095940937__bb0df407-4b1e-45f0-a6fa-a64b51c078eb-16798645704e6a2246-0": {
+          "type": "column",
+          "settings": {
+            "icon": "heart",
+            "image": "shopify://shop_images/gbt8.png",
+            "title": "Feinmotorik",
+            "text": "<p>Echte Schnallen, Wäscheklammern und Reißverschlüsse trainieren kleine Finger – ganz nebenbei beim Spielen.</p>"
+          }
+        },
+        "template--18472095940937__bb0df407-4b1e-45f0-a6fa-a64b51c078eb-16798645704e6a2246-1": {
+          "type": "column",
+          "settings": {
+            "icon": "heart",
+            "image": "shopify://shop_images/gbt7.png",
+            "title": "Montessori-inspiriert",
+            "text": "<p>Selbstständiges Entdecken in eigenem Tempo: 9 Themenseiten laden zum konzentrierten Spielen ein.</p>"
+          }
+        },
+        "template--18472095940937__bb0df407-4b1e-45f0-a6fa-a64b51c078eb-16798645704e6a2246-2": {
+          "type": "column",
+          "settings": {
+            "icon": "heart",
+            "image": "shopify://shop_images/mon5_891acc26-004e-4d2c-82ef-53a8754258c0.png",
+            "title": "Für unterwegs",
+            "text": "<p>Weich, leicht und mit Strap-Verschluss – passt in jede Tasche. Ideal für Auto, Zug und Wartezimmer.</p>"
+          }
+        },
+        "template--18472095940937__bb0df407-4b1e-45f0-a6fa-a64b51c078eb-16798645704e6a2246-3": {
+          "type": "column",
+          "settings": {
+            "icon": "heart",
+            "image": "shopify://shop_images/gbt_17.png",
+            "title": "Geschenk-Tipp",
+            "text": "<p>Zum Geburtstag oder einfach so: ein Geschenk, über das sich Kind und Eltern gleichermaßen freuen.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--18472095940937__bb0df407-4b1e-45f0-a6fa-a64b51c078eb-16798645704e6a2246-0",
+        "template--18472095940937__bb0df407-4b1e-45f0-a6fa-a64b51c078eb-16798645704e6a2246-1",
+        "template--18472095940937__bb0df407-4b1e-45f0-a6fa-a64b51c078eb-16798645704e6a2246-2",
+        "template--18472095940937__bb0df407-4b1e-45f0-a6fa-a64b51c078eb-16798645704e6a2246-3"
+      ],
+      "settings": {
+        "title": "Darum lieben Familien das Storybook",
+        "heading_size": "h1",
+        "text": "",
+        "icon_size": "medium",
+        "columns_desktop": 4,
+        "icon_color": "accent-1",
+        "background_style": "none",
+        "color_scheme": "inverse",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "05db8b15-3aa7-4652-a96c-89ad2a167474": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "template--18472095940937__05db8b15-3aa7-4652-a96c-89ad2a167474-1679864525e35c34e4-0": {
+          "type": "text",
+          "settings": {
+            "title": "Playsori™ Storybook",
+            "link": ""
+          }
+        },
+        "template--18472095940937__05db8b15-3aa7-4652-a96c-89ad2a167474-1679864525e35c34e4-1": {
+          "type": "text",
+          "settings": {
+            "title": "Spielend lernen",
+            "link": ""
+          }
+        },
+        "template--18472095940937__05db8b15-3aa7-4652-a96c-89ad2a167474-1679864525e35c34e4-2": {
+          "type": "text",
+          "settings": {
+            "title": "Ganz ohne Bildschirm",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18472095940937__05db8b15-3aa7-4652-a96c-89ad2a167474-1679864525e35c34e4-0",
+        "template--18472095940937__05db8b15-3aa7-4652-a96c-89ad2a167474-1679864525e35c34e4-1",
+        "template--18472095940937__05db8b15-3aa7-4652-a96c-89ad2a167474-1679864525e35c34e4-2"
+      ],
+      "settings": {
+        "speed": 2,
+        "text_spacing": 2,
+        "text_size": "1.75",
+        "italic_text": false,
+        "uppercase_text": true,
+        "bold_text": true,
+        "color_scheme": "inverse",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "0cf14636-438d-4227-b017-3b91b9f6dd17": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Noch Fragen? Schreib uns!",
+        "heading_size": "h1",
+        "button_full_width": true,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "e6750b05-7703-4f69-ab7c-9ffb0acf18fb",
+    "d8b7c7f2-8a7b-486d-b2c1-184eea98110d",
+    "playsori-featured",
+    "eab98bdb-f257-46ac-a548-66c24089d95a",
+    "bb0df407-4b1e-45f0-a6fa-a64b51c078eb",
+    "05db8b15-3aa7-4652-a96c-89ad2a167474",
+    "0cf14636-438d-4227-b017-3b91b9f6dd17"
+  ]
+}

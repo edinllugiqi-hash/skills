@@ -1,0 +1,432 @@
+{
+  "sections": {
+    "hero": {
+      "type": "tdl-hero",
+      "blocks": {
+        "badge-shipping": {
+          "type": "badge",
+          "settings": {
+            "icon": "truck",
+            "text": "Kostenloser Versand"
+          }
+        },
+        "badge-return": {
+          "type": "badge",
+          "settings": {
+            "icon": "return",
+            "text": "30 Tage Rückgabe"
+          }
+        },
+        "badge-safe": {
+          "type": "badge",
+          "settings": {
+            "icon": "shield",
+            "text": "Geprüfte Sicherheit"
+          }
+        }
+      },
+      "block_order": [
+        "badge-shipping",
+        "badge-return",
+        "badge-safe"
+      ],
+      "settings": {
+        "rating_text": "4,8/5 aus über 10.000 Bewertungen",
+        "heading": "Spielzeug, das mit deinem Kind mitwächst",
+        "heading_size": "h1",
+        "text": "<p>Sichere Lern- und Pflegeprodukte für jede Entwicklungsphase.</p>",
+        "button_label_1": "Jetzt entdecken",
+        "button_link_1": "shopify://collections/all",
+        "mobile_ratio": "4 / 5",
+        "mobile_alignment": "center",
+        "mobile_overlay": false,
+        "desktop_alignment": "left",
+        "desktop_height": 60,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "trust-marquee": {
+      "type": "tdl-marquee",
+      "blocks": {
+        "m1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "text": "Kostenloser Versand ab 50 €"
+          }
+        },
+        "m2": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "text": "30 Tage Geld-zurück-Garantie"
+          }
+        },
+        "m3": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "text": "BPA-frei"
+          }
+        },
+        "m4": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "CE-zertifiziert"
+          }
+        },
+        "m5": {
+          "type": "item",
+          "settings": {
+            "icon": "heart",
+            "text": "Von Eltern geliebt"
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3",
+        "m4",
+        "m5"
+      ],
+      "settings": {
+        "speed": 30,
+        "repeat": 2,
+        "color_scheme": "scheme-4",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "shop-by-age": {
+      "type": "tdl-category-cards",
+      "blocks": {
+        "age-1": {
+          "type": "card",
+          "settings": {
+            "title": "0–12 Monate",
+            "subtitle": "Sinne entdecken",
+            "link": "shopify://collections/all"
+          }
+        },
+        "age-2": {
+          "type": "card",
+          "settings": {
+            "title": "1–3 Jahre",
+            "subtitle": "Greifen & sortieren",
+            "link": "shopify://collections/all"
+          }
+        },
+        "age-3": {
+          "type": "card",
+          "settings": {
+            "title": "3+ Jahre",
+            "subtitle": "Kreativ lernen",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "age-1",
+        "age-2",
+        "age-3"
+      ],
+      "settings": {
+        "heading": "Shoppe nach Alter",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "mobile_card_width": 70,
+        "image_shape": "rounded",
+        "button_label": "",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "bestsellers": {
+      "type": "tdl-product-slider",
+      "settings": {
+        "eyebrow": "Am beliebtesten",
+        "heading": "Unsere Bestseller",
+        "products_to_show": 8,
+        "desktop_layout": "slider",
+        "columns_desktop": 4,
+        "mobile_card_width": 65,
+        "image_ratio": "square",
+        "show_rating": true,
+        "quick_add": "standard",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "benefits": {
+      "type": "tdl-icon-features",
+      "blocks": {
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "title": "Sicher & geprüft",
+            "text": "<p>Schadstofffreie Materialien.</p>"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "puzzle",
+            "title": "Montessori-inspiriert",
+            "text": "<p>Fördert Motorik und Sinne.</p>"
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "return",
+            "title": "30 Tage Rückgabe",
+            "text": "<p>Risikolos ausprobieren.</p>"
+          }
+        },
+        "f4": {
+          "type": "feature",
+          "settings": {
+            "icon": "chat",
+            "title": "Persönlicher Support",
+            "text": "<p>Wir helfen dir gerne weiter.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "heading": "Warum Eltern uns vertrauen",
+        "columns_mobile": "2",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "brand-story": {
+      "type": "tdl-image-text",
+      "blocks": {
+        "logo": {
+          "type": "logo",
+          "settings": {
+            "width": 160
+          }
+        },
+        "eyebrow": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Unsere Geschichte"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Von Eltern für Eltern",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Erzähle hier, warum es deine Marke gibt und was sie besonders macht.</p>"
+          }
+        },
+        "stats": {
+          "type": "stats",
+          "settings": {
+            "value_1": "10.000+",
+            "label_1": "Familien",
+            "value_2": "4,8/5",
+            "label_2": "Bewertung"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "label": "Mehr erfahren",
+            "link": "shopify://pages/about",
+            "style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "logo",
+        "eyebrow",
+        "heading",
+        "text",
+        "stats",
+        "button"
+      ],
+      "settings": {
+        "layout": "image_first",
+        "image_ratio": "1 / 1",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "reviews": {
+      "type": "tdl-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "heading": "Von Familien weltweit geliebt",
+        "summary_text": "4,8/5 aus über 10.000 Bewertungen",
+        "desktop_layout": "slider",
+        "columns_desktop": 4,
+        "mobile_card_width": 85,
+        "button_label": "",
+        "color_scheme": "scheme-5"
+      }
+    },
+    "bundles": {
+      "type": "tdl-product-slider",
+      "settings": {
+        "eyebrow": "Sparen im Set",
+        "heading": "Bundles & Geschenksets",
+        "products_to_show": 4,
+        "desktop_layout": "grid",
+        "columns_desktop": 4,
+        "mobile_card_width": 65,
+        "image_ratio": "square",
+        "show_rating": true,
+        "quick_add": "standard",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "blog": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Ratgeber für Eltern",
+        "heading_size": "h1",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true
+      }
+    },
+    "faq": {
+      "type": "tdl-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Wie lange dauert der Versand?",
+            "answer": "<p>Trage hier deine Versandzeiten ein.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Kann ich Produkte zurückgeben?",
+            "answer": "<p>Trage hier deine Rückgabebedingungen ein.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Ab welchem Alter sind die Produkte geeignet?",
+            "answer": "<p>Die Altersangabe findest du auf jeder Produktseite.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Aus welchen Materialien bestehen die Produkte?",
+            "answer": "<p>Beschreibe hier deine Materialien.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
+      "settings": {
+        "heading": "Häufige Fragen",
+        "enable_schema": true,
+        "button_label": "Kontakt aufnehmen",
+        "button_link": "shopify://pages/contact",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "10 % auf deine erste Bestellung"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Melde dich an für Tipps zur Entwicklung und exklusive Angebote.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form"
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust-marquee",
+    "shop-by-age",
+    "bestsellers",
+    "benefits",
+    "brand-story",
+    "reviews",
+    "bundles",
+    "blog",
+    "faq",
+    "newsletter"
+  ]
+}
