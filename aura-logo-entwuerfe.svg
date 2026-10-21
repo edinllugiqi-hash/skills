@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="960" height="420" fill="#f5f1ea"/>
+
+  <!-- Logo: Schriftzug AURA autoduft (hell) -->
+  <g transform="translate(240,175)">
+    <text x="0" y="0" text-anchor="middle" font-size="72" font-weight="700" letter-spacing="16" fill="#1f1f1f">AURA</text>
+    <line x1="-112" y1="34" x2="-62" y2="34" stroke="#1f1f1f" stroke-width="1.5"/>
+    <text x="0" y="40" text-anchor="middle" font-size="17" letter-spacing="5" fill="#1f1f1f">autoduft</text>
+    <line x1="62" y1="34" x2="112" y2="34" stroke="#1f1f1f" stroke-width="1.5"/>
+    <text x="0" y="150" text-anchor="middle" font-size="16" fill="#6b6255">Logo · hell</text>
+  </g>
+
+  <!-- Logo dunkel (Instagram / Verpackung) -->
+  <g transform="translate(560,40)">
+    <rect x="-130" y="0" width="260" height="240" rx="18" fill="#1f1f1f"/>
+    <text x="0" y="128" text-anchor="middle" font-size="52" font-weight="700" letter-spacing="12" fill="#f5f1ea">AURA</text>
+    <line x1="-84" y1="156" x2="-48" y2="156" stroke="#c99a63" stroke-width="1.5"/>
+    <text x="0" y="161" text-anchor="middle" font-size="13" letter-spacing="4" fill="#c99a63">autoduft</text>
+    <line x1="48" y1="156" x2="84" y2="156" stroke="#c99a63" stroke-width="1.5"/>
+    <text x="0" y="295" text-anchor="middle" font-size="16" fill="#6b6255">Logo · dunkel</text>
+  </g>
+
+  <!-- Holzanhänger-Mockup -->
+  <g transform="translate(830,60)">
+    <rect x="-18" y="0" width="36" height="22" rx="6" fill="#2b2b2b"/>
+    <rect x="-70" y="22" width="140" height="190" rx="22" fill="#c99a63"/>
+    <path d="M-70 70 Q0 60 70 75 M-70 120 Q0 110 70 128 M-70 170 Q0 160 70 176" stroke="#b07f4a" stroke-width="2" fill="none" opacity="0.6"/>
+    <text x="0" y="112" text-anchor="middle" font-size="32" font-weight="700" letter-spacing="6" fill="#4a3320">AURA</text>
+    <text x="0" y="132" text-anchor="middle" font-size="9" letter-spacing="3" fill="#4a3320">AUTODUFT</text>
+    <text x="0" y="188" text-anchor="middle" font-size="11" letter-spacing="3" fill="#4a3320">OSTSEE</text>
+    <text x="0" y="260" text-anchor="middle" font-size="16" fill="#6b6255">Auf Holz graviert</text>
+  </g>
+</svg>
